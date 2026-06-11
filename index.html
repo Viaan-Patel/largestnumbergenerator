@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Large Number Finder</title>
+
+<style>
 h1{
     color:purple;
     font-family: arial;
@@ -24,3 +30,27 @@ p{
     font-size: 22px;
     color:whitesmoke;
 }
+
+</style>
+</head>
+<body>
+<center>
+<h1>WHICH IS THE LARGEST NUMBER?</h1>
+<label>Enter numbers (comma-seperated)</label>
+<input id="numbers" type="text" placeholder="eg: 5,2,8,13">
+<button onclick="largestNumber()">Find Largest Number</button>
+<p id="result"></p>
+</center>
+<script>
+function largestNumber(){
+let inputs = document.getElementById("numbers").value;
+let inputNumbers = inputs.split(",").map(Number);
+let largestNum = Math.max(...inputNumbers);
+document.getElementById("result").innerHTML = "The largest number is:"+largestNum;
+
+}
+
+
+</script>
+</body>
+</html>
